@@ -21,7 +21,7 @@
  * Author URI:        https://https://www.linkedin.com/in/volodymyr-dhzychko-865348171//
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       sylla_quick_notes
+ * Text Domain:       sylla-quick-notes
  * Domain Path:       /languages
  */
 

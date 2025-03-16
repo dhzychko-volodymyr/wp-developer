@@ -112,7 +112,7 @@ class Sylla_quick_notes_Public {
 
 		wp_localize_script( $this->plugin_name, 'sylla_data', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
-			'localizeDeleteNote' => esc_html__( 'Delete Note', 'sylla_quick_notes' ),
+			'localizeDeleteNote' => esc_html__( 'Delete Note', 'sylla-quick-notes' ),
 		) );
 
 	}
@@ -159,7 +159,7 @@ class Sylla_quick_notes_Public {
 	public function sylla_save_new_note() {
 
 		if ( ! isset( $_POST['sylla_security_form'] ) || ! wp_verify_nonce( $_POST['sylla_security_form'], 'sylla_security_save_note' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid security token', 'sylla_quick_notes' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Invalid security token', 'sylla-quick-notes' ) ) );
 		}
 
 		$note_title = sanitize_text_field( $_POST['sylla_note_title'] );
@@ -183,7 +183,7 @@ class Sylla_quick_notes_Public {
 		$new_note_id = $wpdb->insert_id;
 
 		wp_send_json_success( array( 
-			'message' => __( 'Note saved successfully', 'sylla_quick_notes' ),
+			'message' => __( 'Note saved successfully', 'sylla-quick-notes' ),
 			'note_id' => $new_note_id 
 		) );
 
@@ -192,7 +192,7 @@ class Sylla_quick_notes_Public {
 	public function sylla_delete_note() {
 
 		if ( ! isset( $_POST['sylla_security_accordeon'] ) || ! wp_verify_nonce( $_POST['sylla_security_accordeon'], 'sylla_security_delete_note' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid security token', 'sylla_quick_notes' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Invalid security token', 'sylla-quick-notes' ) ) );
 		}
 
 		$note_id = intval( $_POST['sylla_note_id'] );
@@ -210,7 +210,7 @@ class Sylla_quick_notes_Public {
 		);
 
 		wp_send_json_success( array( 
-			'message' => __( 'Note deleted successfully', 'sylla_quick_notes' ),
+			'message' => __( 'Note deleted successfully', 'sylla-quick-notes' ),
 			'note_id' => $note_id 
 		) );
 

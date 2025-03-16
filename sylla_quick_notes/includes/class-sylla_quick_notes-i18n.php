@@ -35,7 +35,7 @@ class Sylla_quick_notes_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'sylla_quick_notes',
+			'sylla-quick-notes',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
